@@ -22,7 +22,6 @@ Dir.glob('./*.json') do |file|
       temp = JSON.parse(data)
       CSV.open("data.csv", "a") do |csv|
         csv << [ temp['_n'], temp["_p"], DateTime.strptime(temp['_t'].to_s,'%s')]
-        puts temp['_n']
       end
     end
   rescue
